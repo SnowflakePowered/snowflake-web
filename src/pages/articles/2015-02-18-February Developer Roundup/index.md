@@ -1,13 +1,13 @@
 ---
 layout: post
 title: Snowflake Developer Roundup - February 2015
-path: blog/progress-report-february-2015
+path: /blog/progress-report-february-2015
 categories:
   - archive
   - progress_report
 date: 2015-02-18
 ---
-Since my previous devlog ['The Home Stretch'](/blog/progress-report-january-2015), I've basically implemented most if not all of the base C# API. At this point, most of the behaviour of the backend is finalized, so there's only a <del>few things to talk about.</del>
+Since my previous devlog ['The Home Stretch'](//blog/progress-report-january-2015), I've basically implemented most if not all of the base C# API. At this point, most of the behaviour of the backend is finalized, so there's only a <del>few things to talk about.</del>
 
 ### New Controller API
 

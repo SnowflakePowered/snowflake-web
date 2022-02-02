@@ -5,7 +5,7 @@ categories:
   - feature
   - technical
   - scraping
-path: blog/progress-report-january-2018
+path: /blog/progress-report-january-2018
 layout: post
 ---
 

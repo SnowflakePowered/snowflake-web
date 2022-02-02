@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Snowflake Progress Report - August 2015
-path: blog/progress-report-august-2015
+path: /blog/progress-report-august-2015
 categories:
   - archive
   - progress_report

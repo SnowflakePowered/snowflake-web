@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Snowflake Developer Roundup - August 2015
-path: blog/dev-report-august-2015
+path: /blog/dev-report-august-2015
 categories:
   - archive
   - progress_report

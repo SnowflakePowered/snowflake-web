@@ -64,12 +64,6 @@ module.exports = {
         ],
       },
     },
-    {
-      resolve: 'gatsby-plugin-google-analytics',
-      options: {
-        trackingId: '',
-      },
-    },
     'gatsby-plugin-catch-links',
     'gatsby-plugin-netlify',
     'gatsby-plugin-offline',

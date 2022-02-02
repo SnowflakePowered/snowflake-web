@@ -4,7 +4,7 @@ title: Snowflake Developer Roundup - January 2015
 categories:
   - archive
   - progress-report
-path: blog/progress-report-january-2015
+path: /blog/progress-report-january-2015
 date: 2015-01-26
 ---
 I tried to save the first devlog of the new year to be when the API is actually finished, but seems like I couldn't wait until then. Still, we're thiiiiissss close to having everything complete, or at least booting a ROM, so I'm going to blog about it.

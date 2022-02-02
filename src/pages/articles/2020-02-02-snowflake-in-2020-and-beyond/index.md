@@ -6,7 +6,7 @@ categories:
   - update
   - technical
   - recap
-path: blog/snowflake-in-2020-and-beyond-2020-02-02
+path: /blog/snowflake-in-2020-and-beyond-2020-02-02
 layout: post
 ---
 

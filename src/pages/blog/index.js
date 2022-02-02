@@ -32,7 +32,6 @@ class BlogIndex extends React.Component {
               site={site}
               isIndex={true}
               key={i}
-              location={location}
             />
           </LazyLoad>
         )
@@ -65,7 +64,7 @@ class BlogIndex extends React.Component {
   }
 }
 
-export default ({ children, location }) => (
+const BlogQuery = ({ children, location }) => (
   <StaticQuery
     query={graphql`
       query IndexFullQuery {
@@ -103,6 +102,8 @@ export default ({ children, location }) => (
     )}
   />
 )
+
+export default BlogQuery;
 
 // export default BlogIndex
 

@@ -4,7 +4,7 @@ title: Snowflake Progress Report - June 2017
 categories:
   - progress_report
 date: 2017-07-03
-path: blog/progress-report-june-2017
+path: /blog/progress-report-june-2017
 ---
 
 This month's main attraction is the new Modules API that will serve as the basis for how Snowflake is developed and packaged in the future. There has been some UI progress as well; but if there is one thing I've learned this month, is that frontend developement is *very difficult*. Nevertheless, there has been some good progress in some of the core elements like the home view. Finally, there have been some improvements in filename parsing to make it more accurate than the previous regex-based method.

@@ -8,7 +8,6 @@ import Layout from '../components/Layout'
 
 import PostExcerpt from '../components/PostExcerpt'
 import Jumbotron from '../components/Jumbotron'
-import { SSL_OP_ALLOW_UNSAFE_LEGACY_RENEGOTIATION } from 'constants'
 
 class HomePage extends React.Component {
   render() {
@@ -33,7 +32,6 @@ class HomePage extends React.Component {
           <LazyLoad height={500} offset={500} once={true} key={i}>
             <PostExcerpt
               data={postdata.post}
-              location={SSL_OP_ALLOW_UNSAFE_LEGACY_RENEGOTIATION}
               site={site}
               isIndex={true}
               key={i}
@@ -70,7 +68,7 @@ class HomePage extends React.Component {
   }
 }
 
-export default ({ children, location }) => (
+const PageQuery = ({ children, location }) => (
   <StaticQuery
     query={graphql`
       query IndexQuery {
@@ -109,6 +107,8 @@ export default ({ children, location }) => (
     )}
   />
 )
+
+export default PageQuery
 
 // export default HomePage
 

@@ -1,0 +1,46 @@
+{
+  "name": "gatsby-remark-reading-time",
+  "description": "Adds an estimated reading time field to all remark nodes",
+  "version": "1.1.0",
+  "author": "Garet McKinley <self@garet.io>",
+  "license": "MIT",
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin",
+    "remark",
+    "reading time",
+    "node",
+    "medium",
+    "estimate"
+  ],
+  "scripts": {
+    "prebuild": "npm run lint",
+    "build": "cross-env BABEL_ENV=production babel src --out-dir .",
+    "lint": "eslint --ext .js src",
+    "test": "npm run lint",
+    "prepublishOnly": "yarn build"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "dependencies": {
+    "reading-time": "^1.5.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.15.7",
+    "@babel/core": "^7.15.8",
+    "@babel/eslint-parser": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.1.0",
+    "eslint-config-prettier": "^8.3.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^11.2.4",
+    "prettier": "2.4.1"
+  },
+  "peerDependencies": {
+    "gatsby": "^2.0.0 || ^3.0.0 || ^4.0.0"
+  }
+}

@@ -5,7 +5,7 @@ date: 2016-07-21
 categories:
   - archive
   - input
-path: blog/input-pipeline
+path: /blog/input-pipeline
 ---
 
 *This is kind of a pseudo-devlog in which I go into slight technical detail about one of Snowflake's multiple APIs. I've written it in such a way as to not require much if any technical knowledge, however, I won't blame you if you find this wall of text a bit boring. You can also consider this the part two of the configuration generation article.* 

@@ -5,7 +5,7 @@ categories:
   - feature
   - technical
   - update
-path: blog/some-updates-2019-01-17
+path: /blog/some-updates-2019-01-17
 layout: post
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Snowflake Progress Report - May 2017
-path: blog/progress-report-may-2017
+path: /blog/progress-report-may-2017
 categories:
   - progress_report
 date: 2016-05-08

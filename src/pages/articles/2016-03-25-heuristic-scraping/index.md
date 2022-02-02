@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Feature Preview - Heuristic Scraping
-path: blog/feature-preview-heuristic-scraping
+path: /blog/feature-preview-heuristic-scraping
 categories:
   - archive
   - features

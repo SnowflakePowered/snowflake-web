@@ -2,7 +2,7 @@
 layout: post
 title: 'Introducing Stone: A database for game consoles and their controllers.'
 date: 2017-06-09
-path: blog/introducing-stone
+path: /blog/introducing-stone
 categories: 
   - stone
 ---

@@ -59,42 +59,6 @@ class BlogPostTemplate extends React.Component {
 
 export default BlogPostTemplate
 
-// export default ({ children }) => (
-//   <StaticQuery
-//     query={graphql`
-//       query BlogPostByPath($path: String!) {
-//         site {
-//           meta: siteMetadata {
-//             title
-//             description
-//             url: siteUrl
-//             author
-//             twitter
-//             adsense
-//           }
-//         }
-//         post: markdownRemark(frontmatter: { path: { eq: $path } }) {
-//           id
-//           html
-//           fileAbsolutePath
-//           frontmatter {
-//             layout
-//             title
-//             path
-//             categories
-//             date(formatString: "YYYY/MM/DD")
-//           }
-//         }
-//       }
-//     `}
-//     render={data => (
-//       <>
-//         <BlogPostTemplate data={data} />
-//       </>
-//     )}
-//   />
-// )
-
 export const pageQuery = graphql`
   query BlogPostByPath($slug: String!) {
     site {

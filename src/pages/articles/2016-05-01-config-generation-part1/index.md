@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Feature Preview — On-the-fly Configuration Generation Part 1.
-path: blog/configuration-generation-part1
+path: /blog/configuration-generation-part1
 categories:
   - archive
   - configuration
@@ -39,7 +39,7 @@ An emulator application (we call it an "assembly" as well)  usually has some way
 
 Defining an option looks like this in Snowflake.
 
-```c#
+```csharp
 [ConfigurationOption("video_fullscreen", DisplayName = "Enable Fullscreen", Simple = true)]
 public bool VideoFullscreen { get; set; } = false;
 ```

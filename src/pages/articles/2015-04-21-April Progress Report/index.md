@@ -5,7 +5,7 @@ categories:
   - archive
   - progress_report
 date: 2015-04-21
-path: blog/progress-report-april-2015
+path: /blog/progress-report-april-2015
 ---
 
 There hasn't been as much progress as I would have liked from February to April, but work is still continuing at a steady rate. There's been few, but very large improvements that I'd like to talk about. That, and I finally have a screenshot of a working incarnation of the final UI.

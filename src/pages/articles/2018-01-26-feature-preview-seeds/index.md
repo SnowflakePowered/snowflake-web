@@ -5,7 +5,7 @@ categories:
   - spotlight
   - technical
   - scraping
-path: blog/feature-preview-seeds
+path: /blog/feature-preview-seeds
 layout: post
 ---
 
@@ -16,7 +16,7 @@ Initially the idea was to have each scraper plugin define a 'weight' that would 
 
 Databases such as OpenVGDB have compiled information for thousands of games, but rely on hashing and filenames. While CRC hashing is a reliable method for verified dumps, for certain types of systems especially past the 4th generation of consoles, trimming and compression invalidate the hash without compromising ROM content. Disc-based games often were too large to hash in a reasonable time, and now there are emulated games that must be extracted to the filesystem before being able to be run. 
 
-File Signature detection was a strategy to get some more information off of games that can not be hashed quickly or easily, leveraging [Stone](https://stone.snowflakepow.red) mimetypes to determine both executable file types and information about the ROM itself. However, because it was not sufficient to get a full metadata profile of a game, it was used as an auxillary source if the game was determined to be unhashable. The so called 'pipeline' from search term to metadata was still rigid and bloated; while the changes made to the library in the form of Records allowed for metadata beyond the prescribed title, description, author, etc., scrapers were still fixed to this prescribed system. More details about this older approach can be found at the archived article on [heuristic scraping](https://snowflakepowe.red/blog/feature-preview-heuristic-scraping).
+File Signature detection was a strategy to get some more information off of games that can not be hashed quickly or easily, leveraging [Stone](https://stone.snowflakepow.red) mimetypes to determine both executable file types and information about the ROM itself. However, because it was not sufficient to get a full metadata profile of a game, it was used as an auxillary source if the game was determined to be unhashable. The so called 'pipeline' from search term to metadata was still rigid and bloated; while the changes made to the library in the form of Records allowed for metadata beyond the prescribed title, description, author, etc., scrapers were still fixed to this prescribed system. More details about this older approach can be found at the archived article on [heuristic scraping](https://snowflakepowe.red//blog/feature-preview-heuristic-scraping).
 
 ## Query Providers
 
