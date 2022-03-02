@@ -2,9 +2,7 @@
 title: "Snowflake Progress Report 2022"
 date: 2022-03-02
 categories:
-  - programming
-  - feature
-  - update
+  - progress_report
 layout: post
 path: /blog/progress-report-2022-03-02
 ---
