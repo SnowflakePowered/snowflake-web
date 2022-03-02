@@ -64,8 +64,18 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: `gatsby-plugin-netlify`,
+      options: {
+        headers: {
+          '/*': [
+            "X-Frame-Options: ALLOW-FROM https://snowflakepowe.red/",
+          ]
+        },
+        mergeSecurityHeaders: true,
+      },
+    },
     'gatsby-plugin-catch-links',
-    'gatsby-plugin-netlify',
     'gatsby-plugin-offline',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
