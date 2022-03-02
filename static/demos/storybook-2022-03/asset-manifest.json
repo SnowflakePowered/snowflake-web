@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/static/css/main.8af4a484.chunk.css",
+    "main.js": "/main.3bbb6f00.iframe.bundle.js",
+    "main.css.map": "/static/css/main.8af4a484.chunk.css.map",
+    "runtime~main.js": "/runtime~main.248e4f1a.iframe.bundle.js",
+    "vendors~main.css": "/static/css/vendors~main.7ad1a703.chunk.css",
+    "vendors~main.js": "/vendors~main.b0c33b78.iframe.bundle.js",
+    "vendors~main.css.map": "/static/css/vendors~main.7ad1a703.chunk.css.map",
+    "vendors~main.js.map": "/vendors~main.b0c33b78.iframe.bundle.js.map",
+    "iframe.html": "/iframe.html",
+    "static/media/index.css": "/static/media/roboto-vietnamese-400-normal.c0bec65d.woff2",
+    "vendors~main.b0c33b78.iframe.bundle.js.LICENSE.txt": "/vendors~main.b0c33b78.iframe.bundle.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "runtime~main.248e4f1a.iframe.bundle.js",
+    "static/css/vendors~main.7ad1a703.chunk.css",
+    "vendors~main.b0c33b78.iframe.bundle.js",
+    "static/css/main.8af4a484.chunk.css",
+    "main.3bbb6f00.iframe.bundle.js"
+  ]
+}
