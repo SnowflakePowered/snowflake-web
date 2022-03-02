@@ -42,7 +42,7 @@ Regardless, I am yet to be aware of another player on the scene that offers all 
 </p>
 
 ## UX Work Progress ([hydrogen-paper](https://github.com/SnowflakePowered/hydrogen-paper))
-Let's start off with some pretty pictures. There has been substantial progress in the design of a frontend UI for Snowflake called *hydrogen*. Work begun in 2020, and is making slow but steady progress. 
+Let's start off with some pretty pictures. There has been substantial progress in the design of a frontend UI for Snowflake called *hydrogen*. Work began in earnest in 2020, and is making slow but steady progress. 
 
 ![game view](https://raw.githubusercontent.com/SnowflakePowered/hydrogen-paper/master/mockups/exports/Nintendo%20Entertainment%20System%20View.png)
 
