@@ -48,6 +48,10 @@ class BlogPostTemplate extends React.Component {
                 property: 'og:url',
                 content: get(site, 'meta.url') + get(post, 'frontmatter.path'),
               },
+              {
+                property: 'og:image',
+                content: `${get(site, 'url')}/img/profile.png`,
+              }
             ]}
           />
           {template}

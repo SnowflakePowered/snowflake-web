@@ -55,7 +55,7 @@ class HomePage extends React.Component {
               { property: 'og:url', content: get(site, 'url') },
               {
                 property: 'og:image',
-                content: `${get(site, 'url')}/img/profile.jpg`,
+                content: `${get(site, 'url')}/img/profile.png`,
               },
             ]}
           />
