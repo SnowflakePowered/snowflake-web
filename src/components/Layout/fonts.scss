@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto:400,300,100|Nunito:300|Roboto+Slab:400,300,200,100);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto:400,300,100|Nunito:300|Roboto+Slab:400,300,200,100|EB+Garamond:400);
 @font-face {
   font-family: 'round';
   src: url('/font/round.otf');
@@ -15,7 +15,7 @@ $font-family-sans-serif: 'Roboto', -apple-system, BlinkMacSystemFont,
   'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
   'Segoe UI Symbol' !default;
 // Font, line-height, and color for body text, headings, and more.
-$font-family-serif: 'Roboto Slab', 'Consolas', 'Menlo', serif !default;
+$font-family-serif: 'EB Garamond', 'Roboto Slab', 'Consolas', 'Menlo', serif !default;
 
 $font-family-title: 'round', 'Nunito', $font-family-sans-serif !default;
 
