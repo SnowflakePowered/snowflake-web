@@ -62,7 +62,7 @@ All of this is fine and good, but these are all just mockups right? Well, I've d
 
 Feel free to check out the [component demos in full screen](https://snowflakepowe.red/demos/storybook-2022-03/index.html?path=/story/framing--default).
 
-<iframe src="/demos/storybook-2022-03/index.html?path=/story/framing--default" frameborder="0" style="margin-left:-25%;width:150%;height:700px;position:static;"> </iframe>
+<iframe src="/demos/storybook-2022-03/index.html?path=/story/framing--default" frameborder="0" style="width:100%;height:700px;position:static;"> </iframe>
 
 ## Work in Progress -- The Ingame API and Overlays (PR [#836](https://github.com/SnowflakePowered/snowflake/pull/836)) 
 
