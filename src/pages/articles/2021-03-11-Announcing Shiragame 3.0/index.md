@@ -1,6 +1,6 @@
 ---
 title: "Announcing shiragame 3.0: A comprehensive and versioned game attestation database."
-date: 2022-03-02
+date: 2021-03-11
 categories:
   - annoucement
   - library
