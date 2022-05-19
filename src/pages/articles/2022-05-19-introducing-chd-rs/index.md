@@ -1,5 +1,5 @@
 ---
-title: "Adventures in C# Optimization"
+title: "Introducing chd-rs"
 date: 2022-05-19
 categories:
   - programming
