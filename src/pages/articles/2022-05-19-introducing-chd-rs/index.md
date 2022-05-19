@@ -13,14 +13,14 @@ CHD is quickly becoming the *de facto* format for ROM image archival. This is pr
 
 chd-rs supports all CHD versions from V1-5 and all CHD codecs for feature parity with the [MAME reference implementation](https://github.com/mamedev/mame/blob/75e986a65178e129efa88d7cc969e93203a45a91/src/lib/util/chd.cpp) and wider support than [libchdr](https://github.com/rtissera/libchdr):
 
-• Deflate (zlib)
-• Raw LZMA (lzma)
-• Raw FLAC (flac)
-• Huffman (huff)
-• CD Deflate (cdzl)
-• CD LZMA (cdlz)
-• CD FLAC (cdfl)
-• AV Huffman (avhu)
+* Deflate (zlib)
+* Raw LZMA (lzma)
+* Raw FLAC (flac)
+* Huffman (huff)
+* CD Deflate (cdzl)
+* CD LZMA (cdlz)
+* CD FLAC (cdfl)
+* AV Huffman (avhu)
 
 
 chd-rs also provides [C bindings](https://github.com/SnowflakePowered/chd-rs/tree/master/chd-rs-capi) that are compatible with a limited subset of libchdr. 
