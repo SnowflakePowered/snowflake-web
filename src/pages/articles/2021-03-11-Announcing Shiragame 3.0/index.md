@@ -7,7 +7,7 @@ categories:
 layout: post
 path: /blog/announcing-shiragame-3-0
 ---
-![banner](https://shiragame.snowflakepowe.red/logo.svg)
+![](https://shiragame.snowflakepowe.red/logo.svg)
 
 shiragame is a game attestation database that collects information from No-Intro, Redump, TOSEC, and more and consolidates it into a redistributable SQLite database with a [fully specified and semantically versioned schema](https://github.com/SnowflakePowered/shiratsu/blob/master/SPECIFICATION.md). shiragame is updated on a roughly weekly basis to keep up with the newest information.
 
