@@ -12,9 +12,9 @@ path: /blog/introducing-librashader-2023-01-14
 ![](librashader-hero.svg)
 
 
-librashader is a complete reimplementation of the RetroArch slang shader pipeline that allows standalone emulators to easily and **optionally** implement support for RetroArch-style shaders and shader presets.
+[librashader](https://github.com/SnowflakePowered/librashader) is a complete reimplementation of the RetroArch slang shader pipeline that allows standalone emulators to easily and **optionally** implement support for RetroArch-style shaders and shader presets.
 
-I've been sitting on this for a while since the last [Snowflake progress report](https://snowflakepowe.red/blog/progress-report-2022-03-02) where I teased it at the very end, but it wasn't until a few months ago that I nerd sniped myself into investigating the feasibility of doing so. The end result of this effort is a complete reimplementation of a shader pipeline that should be compatible with all shaders in [slang-shaders](https://github.com/libretro/slang-shaders), including the preset parser, the shader preprocessor, and SPIR-V translation, as well as runtime implementations for Direct3D 11, OpenGL, and Vulkan. To be clear, librashader did not "rip out" the shader parts of RetroArch, but is a complete reimplementation with a [fully documented Rust API](https://docs.rs/librashader/latest/librashader/) that exposes every part of the pipeline. 
+I've been sitting on this for a while since the last [Snowflake progress report](https://snowflakepowe.red/blog/progress-report-2022-03-02) where I teased it at the very end, but it wasn't until a few months ago that I nerd sniped myself into investigating the feasibility of doing so. The end result of this effort is a complete reimplementation of a shader pipeline that should be compatible with all shaders in [slang-shaders](https://github.com/libretro/slang-shaders), including the preset parser, the shader preprocessor, and SPIR-V translation, as well as runtime implementations for Direct3D 11, OpenGL, and Vulkan. To be clear, librashader does not "rip out" the shader parts of RetroArch and just repackage it up, but is a complete reimplementation with a [fully documented Rust API](https://docs.rs/librashader/latest/librashader/) that exposes every part of the pipeline. 
 
 
 ## Why do this?
@@ -35,7 +35,7 @@ and now **any emulator** can use RetroArch's shaders, without needing to be a Re
 <p align="center">
   <img src="https://user-images.githubusercontent.com/1000503/212462721-f40f3555-8c50-448e-8876-534102f982e1.png" />
   <br >
-  <em style="font-style: italic;font-size:14px;">The OpenGL 4.6 runtime running gbc-lcd-grid-v2. My example apps are very basic and the poor scaling and rendering outside the borders is due to poor handling of the viewport, not the librashader runtime.</em>
+  <em style="font-style: italic;font-size:14px;">The OpenGL 4.6 runtime running gbc-lcd-grid-v2. The demo app is very basic and the poor scaling and rendering outside the borders is due to poor handling of the viewport in the demo app, not the librashader runtime.</em>
 </p>
 
 librashader implements the [preset parser](https://docs.rs/librashader/latest/librashader/presets/index.html), which parses `.slangp` presets, the [shader preprocessor](https://docs.rs/librashader/latest/librashader/preprocess/index.html), which handles combining multiple shader files into one unit, which can finally be sent to [shader reflection](https://docs.rs/librashader/latest/librashader/reflect/index.html), which actually deals with how to compile the shader for your GPU. This compiled artifact is then sent to a runtime, which deals with rendering the shader given input and output frame buffers.
