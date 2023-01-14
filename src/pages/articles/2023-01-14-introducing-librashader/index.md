@@ -9,7 +9,7 @@ layout: post
 path: /blog/introducing-librashader-2023-01-14
 ---
 
-![](librashader-hero.png)
+![](librashader-hero.svg)
 
 
 librashader is a complete reimplementation of the RetroArch slang shader pipeline that allows standalone emulators to easily and **optionally** implement support for RetroArch-style shaders and shader presets.
