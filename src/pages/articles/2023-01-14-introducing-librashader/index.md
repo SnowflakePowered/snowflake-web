@@ -53,6 +53,8 @@ librashader supports less platforms than RetroArch does. I do not have a persona
 
 There are some additional technical caveats listed in the [readme](https://github.com/SnowflakePowered/librashader/blob/master/README.md) that is more helpful for developers, but I don't forsee any actual issues in practice outside of any actual bugs that come up.
 
+And of course, librashader is currently in beta, with all the versioning finickiness that entails. I am open to suggestions on how to improve the API, and I am hesitant to finalize a "1.0" version without librashader seeing wider use and feedback from other developers. One thing I could think of right now is a need to improve logging, but I need to think on how to create a good logging interface without clogging up standard output for an emulator. There is some additional finagling involved as well due to differences between Rust and C/C++.
+
 ## Future Work
 A Direct3D 12 runtime would be nice to have. All the runtimes are fairly similar in structure, so I think I will quite easily be able to support D3D12 soon but I do need to take a break, play some actual video games, and touch grass. I had originally planned to release this by Christmas, but the Vulkan runtime was taking me so long to find the motivation to complete. 
 
