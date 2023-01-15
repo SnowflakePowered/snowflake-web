@@ -12,7 +12,7 @@ path: /blog/introducing-librashader-2023-01-14
 ![](librashader-hero.svg)
 
 
-[librashader](https://github.com/SnowflakePowered/librashader) is a complete reimplementation of the RetroArch slang shader pipeline that allows standalone emulators to easily and **optionally** implement support for RetroArch-style shaders and shader presets.
+**[librashader](https://github.com/SnowflakePowered/librashader)** is a complete reimplementation of the RetroArch slang shader pipeline that allows standalone emulators to easily and **optionally** implement support for RetroArch-style shaders and shader presets.
 
 I've been sitting on this for a while since the last [Snowflake progress report](https://snowflakepowe.red/blog/progress-report-2022-03-02) where I teased it at the very end, but it wasn't until a few months ago that I nerd sniped myself into investigating the feasibility of doing so. The end result of this effort is a complete reimplementation of a shader pipeline that should be compatible with all shaders in [slang-shaders](https://github.com/libretro/slang-shaders), including the preset parser, the shader preprocessor, and SPIR-V translation, as well as runtime implementations for Direct3D 11, OpenGL, and Vulkan. To be clear, librashader does not "rip out" the shader parts of RetroArch and just repackage it up, but is a complete reimplementation with a [fully documented Rust API](https://docs.rs/librashader/latest/librashader/) that exposes every part of the pipeline. 
 
