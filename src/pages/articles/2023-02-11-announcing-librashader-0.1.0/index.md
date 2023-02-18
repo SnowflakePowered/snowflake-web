@@ -21,7 +21,7 @@ path: /blog/announcing-librashader-0.1.0
 A little over a month ago I unveiled [librashader](https://github.com/SnowflakePowered/librashader), a standalone shader runtime for RetroArch 'slang' shaders in [this blog post](https://snowflakepowe.red/blog/introducing-librashader-2023-01-14). I've been blown away by the positive response and in the end couldn't keep away at polishing and tackling some of those "Future Work" items I alluded to at the end. With all the bugfixes and new features this month, I'm happy to announce the first numbered release of librashader, version 0.1.0, bringing it officially out of beta. 
 
 The new release includes a ton of bugfixes to correct rendering accuracy as well as host of new features that try to make librashader a "*better-than-reference*" implementation of RetroArch's [slang-shader](https://github.com/libretro/slang-shaders) runtime; features like a working Direct3D 12 implementation, multithreaded shader compilation, and a persistent global shader cache. librashader 0.1.0 also begins a commitment to [semantic versioning](https://semver.org/)
-of the library as well as an [explicity versioning policy](https://github.com/SnowflakePowered/librashader#versioning) for C ABI compatibility. 
+of the library as well as an [explicit versioning policy](https://github.com/SnowflakePowered/librashader#versioning) for C ABI compatibility. 
 
 Before anything gets out of hand, the hero image is just a screenshot of the Advanced Wars remake running [Duimon's GBA Mega Bezel preset](https://forums.libretro.com/t/duimon-hsm-mega-bezel-graphics-and-presets-feedback-and-updates/28146) on the Direct3D 11 test program, for illustrative purposes only.
 
