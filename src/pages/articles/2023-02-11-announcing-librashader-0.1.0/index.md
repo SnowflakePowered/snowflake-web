@@ -76,7 +76,7 @@ reflection via SPIR-V Cross is still single-threaded because SPIR-V Cross is fas
 
 Loading LUT images into CPU memory is also now done with multiple threads. This is also available to OpenGL as well as Direct3D 11, Direct3D 12, and Vulkan, and substantially speeds up load times post-compilation.
 
-There were also API improvements in allowing filter chains to be built asynchronously in a different thread. A lot of this involved shoring up various internal datastructures to make sure they were thread safe to read from separate threads, but the biggest addition are the new `filter_chain_create_deferred` APIs that allow
+There were also API improvements in allowing filter chains to be built asynchronously in a different thread. A lot of this involved shoring up various internal datastructures to make sure they were thread safe to read from separate threads, but the biggest additions are the new `filter_chain_create_deferred` APIs that allow
 the caller to defer GPU-side initialization of the filter chain until after all the CPU work is done in a different thread. Properly utilized, loading a new shader preset should not "lock up" the emulator or game.
 
 ## Shader Caching ([#10](https://github.com/SnowflakePowered/librashader/pull/10))
