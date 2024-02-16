@@ -23,7 +23,9 @@ slang shaders with two brand new runtimes, support for [preset path wildcards](h
 ## Full macOS and Metal support
 
 <p align="center">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/D4QM6Oc02HI?si=GWE8-73zkH9AimYS&controls=0&autoplay=1" title="librashader cube" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<video autoplay loop muted>
+  <source src="cube.mp4" type="video/mp4">
+</video>
   <br >
   <em style="font-style: italic;font-size:14px;">The default Xcode Metal template, now with 100% more bezels.</em>
 </p>
