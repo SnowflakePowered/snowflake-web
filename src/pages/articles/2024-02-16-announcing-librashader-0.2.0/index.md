@@ -23,8 +23,8 @@ slang shaders with two brand new runtimes, support for [preset path wildcards](h
 ## Full macOS and Metal support
 
 <p align="center">
-<video src="https://private-user-images.githubusercontent.com/1000503/305273085-d725b1ec-886a-4eee-989c-91fe2786edda.mov?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MDgwNjQ1NDIsIm5iZiI6MTcwODA2NDI0MiwicGF0aCI6Ii8xMDAwNTAzLzMwNTI3MzA4NS1kNzI1YjFlYy04ODZhLTRlZWUtOTg5Yy05MWZlMjc4NmVkZGEubW92P1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQVZDT0RZTFNBNTNQUUs0WkElMkYyMDI0MDIxNiUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyNDAyMTZUMDYxNzIyWiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9MGYzZjA2MDQzOGYxZjM0MWVmZjJmY2RlM2MwNGFlNzY0ZDBjN2JiMzRmMTk1NWM4YWY5MWZlNGU3OTMyNzE2OCZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QmYWN0b3JfaWQ9MCZrZXlfaWQ9MCZyZXBvX2lkPTAifQ.MGNT5JYRLhk7YkbgP7lh1k1aZvjBG0P-XokCA5FDpEs
-">  <br >
+<iframe width="560" height="315" src="https://www.youtube.com/embed/D4QM6Oc02HI?si=GWE8-73zkH9AimYS&controls=0&autoplay=1" title="librashader cube" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <br >
   <em style="font-style: italic;font-size:14px;">The default Xcode Metal template, now with 100% more bezels.</em>
 </p>
 
@@ -39,7 +39,7 @@ The Metal runtime is written completely in Rust, mostly on a Windows environment
 A huge thanks to [@LukeUsher](https://github.com/LukeUsher) for kicking off this effort by [setting up CI builds for macOS](https://github.com/SnowflakePowered/librashader/pull/36) and testing the OpenGL runtime on macOS.
 
 
-##  `wgpu` runtime
+##  wgpu runtime
 librashader now provides a [`wgpu`](https://github.com/gfx-rs/wgpu) runtime, currently only available in the Rust API. This will allow developers writing `wgpu` applications to more easily integrate librashader into their rendering pipelines. 
 
 There were considerable technical difficulties to bringing this all-new runtime to librashader. While it is an 'abstraction layer' over native graphics APIs, it only properly supports the WGSL shader language, which does not support combined "texture samplers", (`sampler2D`) but this is a [requirement of the slang-shader spec](https://github.com/libretro/slang-shaders?tab=readme-ov-file#deduce-shader-inputs-by-reflection). The solution is to write a [custom compiler pass](https://github.com/SnowflakePowered/librashader/blob/ba6c32e8587be7f96297b64e70e8a830de452b26/librashader-reflect/src/reflect/naga/spirv_passes/lower_samplers.rs) that runs after the shader files have been parsed and compiled into SPIR-V bytecode, to "lower" or split apart textures and samplers so they can be recompiled to WGSL. This was the biggest blocker to writing this backend, and having now written this lowering pass, it opens up whole new options for librashader to eventually switch completely to [naga](https://github.com/gfx-rs/wgpu/tree/trunk/naga) for shader transpilation over SPIRV-Cross.
