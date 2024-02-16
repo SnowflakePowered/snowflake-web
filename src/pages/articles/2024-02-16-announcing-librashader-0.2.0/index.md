@@ -23,7 +23,7 @@ slang shaders with two brand new runtimes, support for [preset path wildcards](h
 ## Full macOS and Metal support
 
 <p align="center">
-<video autoplay loop muted>
+<video autoplay loop muted width="800">
   <source src="cube.mp4" type="video/mp4">
 </video>
   <br >
