@@ -9,12 +9,12 @@ layout: post
 path: /blog/announcing-librashader-0.2.0
 ---
 
-<!-- ![](librashader-hero.svg) -->
-
 <p align="center">
-  <img src="librashader-1.0.svg" />
+  <img src="librashader-2.0.svg" />
   <br >
-  <em style="font-style: italic;font-size:14px;">I don't remember Advanced Wars looking that good on GBA.</em>
+  <em style="font-style: italic;font-size:14px;">Final Fantasy XIII technically did release while CRTs were still common.</em><br>
+  <em style="font-style: italic;font-size:12px;">Preset: koko-aio Ambilight Immersive</em>
+
 </p>
 
 It's been a almost exactly a year since librashader was released and while I've had lots of positive feedback, this release hopes to address the concerns I've received regarding its developer experience, both for Rust, and C API usage. This release of librashader finally brings complete reference parity with RetroArch
