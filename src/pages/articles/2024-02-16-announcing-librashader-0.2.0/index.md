@@ -17,15 +17,24 @@ path: /blog/announcing-librashader-0.2.0
   <em style="font-style: italic;font-size:14px;">I don't remember Advanced Wars looking that good on GBA.</em>
 </p>
 
-It's been a almost exactly a year since librashader was released and while I've had lots of positive feedback, this release hopes to address the concerns I've received regarding its developer experience, both for Rust, and C API usage. This release of librashader finally brings *beyond-reference* parity with RetroArch
+It's been a almost exactly a year since librashader was released and while I've had lots of positive feedback, this release hopes to address the concerns I've received regarding its developer experience, both for Rust, and C API usage. This release of librashader finally brings complete reference parity with RetroArch
 slang shaders with two brand new runtimes, support for [preset path wildcards](https://github.com/libretro/RetroArch/pull/15023), and support for new shader semantics added to RetroArch since last year.
 
 ## Full macOS and Metal support
+
+<p align="center">
+<video src="https://private-user-images.githubusercontent.com/1000503/305273085-d725b1ec-886a-4eee-989c-91fe2786edda.mov?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MDgwNjQ1NDIsIm5iZiI6MTcwODA2NDI0MiwicGF0aCI6Ii8xMDAwNTAzLzMwNTI3MzA4NS1kNzI1YjFlYy04ODZhLTRlZWUtOTg5Yy05MWZlMjc4NmVkZGEubW92P1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQVZDT0RZTFNBNTNQUUs0WkElMkYyMDI0MDIxNiUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyNDAyMTZUMDYxNzIyWiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9MGYzZjA2MDQzOGYxZjM0MWVmZjJmY2RlM2MwNGFlNzY0ZDBjN2JiMzRmMTk1NWM4YWY5MWZlNGU3OTMyNzE2OCZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QmYWN0b3JfaWQ9MCZrZXlfaWQ9MCZyZXBvX2lkPTAifQ.MGNT5JYRLhk7YkbgP7lh1k1aZvjBG0P-XokCA5FDpEs
+">  <br >
+  <em style="font-style: italic;font-size:14px;">The default Xcode Metal template, now with 100% more bezels.</em>
+</p>
+
+
+
 librashader was primarily focused on Windows and Linux, and it wasn't until recently that I was able to get my hands on a macOS machine to be able to do some basic testing. This release of librashader brings full macOS support by [fixing a bug in the OpenGL runtime](https://github.com/SnowflakePowered/librashader/pull/44) that prevented shaders from running on macOS, as well as an [entirely new Metal runtime](https://github.com/SnowflakePowered/librashader/pull/38) that is [fully compatible with Objective-C](https://github.com/SnowflakePowered/librashader/blob/master/test/capi-tests/objctest/objctest/Renderer.m). With the addition of the Metal runtime, librashader is now able to run on all modern desktop environments. 
 
 After completing the (also new) wgpu runtime with minimal rendering bugs, I became convinced that I could write a fully working Metal runtime for librashader without needing a lot of testing. This was a moment of hubris: I was fortunately able to borrow a friend's MacBook Pro for a couple of days to iron out one or two bugs, as well as writing a quick Objective-C example to test the validity of the C bindings. 
 
-There are some caveats: the Metal runtime is written completely in Rust, mostly on a Windows environment.  Since I still don't have easy access to a macOS machine, testing will have to rely on users and developers on macOS. The Metal backend also does not support shader caching, but it seems shader compilation on Apple Silicon machines is fairly fast. The Metal runtime supports both Intel Macs and Apple Silicon, as well as iOS if you build your own binaries.
+The Metal runtime is written completely in Rust, mostly on a Windows environment. Since I still don't have easy access to a macOS machine, testing will have to rely on users and developers on macOS. It also does not support shader caching at the moment, but it seems shader compilation on Apple Silicon machines is fairly fast. The Metal runtime supports both Intel Macs and Apple Silicon, as well as iOS if you build your own binaries.
 
 A huge thanks to [@LukeUsher](https://github.com/LukeUsher) for kicking off this effort by [setting up CI builds for macOS](https://github.com/SnowflakePowered/librashader/pull/36) and testing the OpenGL runtime on macOS.
 
@@ -33,9 +42,9 @@ A huge thanks to [@LukeUsher](https://github.com/LukeUsher) for kicking off this
 ##  `wgpu` runtime
 librashader now provides a [`wgpu`](https://github.com/gfx-rs/wgpu) runtime, currently only available in the Rust API. This will allow developers writing `wgpu` applications to more easily integrate librashader into their rendering pipelines. 
 
-There were considerable technical difficulties to bringing this all-new runtime to librashader. While it is an 'abstraction layer' over native graphics APIs, it only really supports the WGSL shader language. WGSL does not support combined "texture samplers", (`sampler2D`) but this is a [requirement of the slang-shader spec](https://github.com/libretro/slang-shaders?tab=readme-ov-file#deduce-shader-inputs-by-reflection). The solution is to write a [custom compiler pass](https://github.com/SnowflakePowered/librashader/blob/master/librashader-reflect/src/back/wgsl/lower_samplers.rs) that runs after the shader files have been parsed and compiled into SPIR-V bytecode, to "lower" or split apart textures and samplers so they can be recompiled to WGSL. This was the biggest blocker to writing this backend, and having now written this lowering pass, it opens up whole new options for librashader to eventually switch completely to [naga](https://github.com/gfx-rs/wgpu/tree/trunk/naga) for shader transpilation over SPIRV-Cross.
+There were considerable technical difficulties to bringing this all-new runtime to librashader. While it is an 'abstraction layer' over native graphics APIs, it only properly supports the WGSL shader language, which does not support combined "texture samplers", (`sampler2D`) but this is a [requirement of the slang-shader spec](https://github.com/libretro/slang-shaders?tab=readme-ov-file#deduce-shader-inputs-by-reflection). The solution is to write a [custom compiler pass](https://github.com/SnowflakePowered/librashader/blob/ba6c32e8587be7f96297b64e70e8a830de452b26/librashader-reflect/src/reflect/naga/spirv_passes/lower_samplers.rs) that runs after the shader files have been parsed and compiled into SPIR-V bytecode, to "lower" or split apart textures and samplers so they can be recompiled to WGSL. This was the biggest blocker to writing this backend, and having now written this lowering pass, it opens up whole new options for librashader to eventually switch completely to [naga](https://github.com/gfx-rs/wgpu/tree/trunk/naga) for shader transpilation over SPIRV-Cross.
 
-librashader on `wgpu` runs on all native platforms. `wgpu` also runs on WebGPU, but there are some issues with linking to some C libraries that librashader requires that prevent it from currently building for the web, but they are by no means insurmountable issues. 
+There are some caveats, especially compared to some other shaders. wgpu does not support any shaders that use the [inverse function](https://github.com/gfx-rs/wgpu/issues/4330), this includes Mega Bezel shaders. wgpu also does not support shader caching in any way. While `wgpu` works on the web through WebGPU, librashader currently uses some C dependencies like glslang that prevent it from building, which means it only runs on native platforms. This is not an insurmountable issue however, and I hope to see librashader in browsers in the future.
 
 Thanks to [@dbalsom](https://github.com/dbalsom) for requesting this runtime for his [MartyPC](https://github.com/dbalsom/martypc) emulator, and [@eddyb](https://github.com/eddyb) for helping me figure out some of the more difficult SPIR-V transforms.
 
@@ -51,6 +60,7 @@ librashader now supports the [`Rotation`](https://github.com/libretro/RetroArch/
 The new [`original`](https://github.com/libretro/RetroArch/pull/15937) scaling type, still in draft PR, is also now supported by librashader. This PR has yet to land in RetroArch, so no shader presets currently use this scaling type, but when it lands, librashader will correctly handle scaling for presets that use this scale type.
 
 ## Build and portability improvements
+
 This release placed a large focus on making librashader easier to build, on more platforms. The build-time requirements for librashader 0.1.0 used to require Python, CMake, and some more tooling due to upstream dependencies. After much effort on improving or replacing those dependencies, librashader now only needs a fairly recent Rust compiler, and a C toolchain to build.
 
 This was done by bypassing Meson for `spirv-to-dxil` and replacing `shaderc` with [new bindings directly to `glslang`](https://crates.io/crates/glslang). `glslang` is a compiler used to compile the shader source files, which are written in GLSL, to SPIR-V, which is then converted back into a variety of different
@@ -68,4 +78,4 @@ As librashader no longer has buildtime linkage requirements, the binary packages
 
 ## Next steps
 
-With the completion of the Metal and wgpu runtimes, librashader is mostly complete in my eyes. The rest
+With the completion of the Metal and wgpu runtimes, librashader brings slang-shader support to every modern graphics API 
