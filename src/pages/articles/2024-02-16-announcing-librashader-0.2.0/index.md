@@ -63,7 +63,7 @@ librashader now supports loading presets with [shader preset path wildcards](htt
 
 ## New shader semantics and scaling options
 
-librashader now supports the [`Rotation`](https://github.com/libretro/RetroArch/pull/15136), [`CurrentSubFrame`, and `TotalSubFrames`](https://github.com/libretro/RetroArch/pull/16209) semantics introduced fairly recently. Shader presets using these uniforms will now be supported, if the program calling into librashader supplies it with the information. As librashader just handles applying effects to a quad texture, applications that use librashader will need to supply it with the relevant and correct values to take advantage of these features.
+librashader now supports the [`Rotation`](https://github.com/libretro/RetroArch/pull/15136), [`CurrentSubFrame`, and `TotalSubFrames`](https://github.com/libretro/RetroArch/pull/16209) semantics introduced to RetroArch fairly recently. As librashader just handles applying effects to a quad texture, applications that use librashader will need to supply it with the relevant and correct values to take advantage of these features.
 
 
 The new [`original`](https://github.com/libretro/RetroArch/pull/15937) scaling type, still in draft, is also now supported by librashader. This PR has yet to land in RetroArch, so no shader presets currently use this scaling type, but when it lands, librashader will correctly handle scaling for presets that use this scale type.
