@@ -81,7 +81,7 @@ librashader now no longer ships an extra copy of SQLite for caching, which shoul
 
 ## Linux packages
 
-librashader now provides packages for [a variety of Linux distributions](https://software.opensuse.org//download.html?project=home%3Achyyran%3Alibrashader&package=librashader) across various architectures. I hope this will make using librashader on Linux a little easier for end users and developers. librashader provides packages on Arch,Ubuntu 23.10 and Fedora 39, all of which ship relatively recent versions of `rustc`. Unfortunately, as Debian Bookworm's `rustc` is still stuck on 1.63, which is over a year and a half old, I am unable to properly support Debian until they upgrade their Rust compiler to 1.70 or higher. 
+librashader now provides packages for [a variety of Linux distributions](https://software.opensuse.org//download.html?project=home%3Achyyran%3Alibrashader&package=librashader) across various architectures. I hope this will make using librashader on Linux a little easier for end users and developers. librashader provides packages on Arch, Ubuntu 23.10 and Fedora 39, all of which ship relatively recent versions of `rustc`. Unfortunately, as Debian Bookworm's `rustc` is still stuck on 1.63, which is over a year and a half old, I am unable to properly support Debian until they upgrade their Rust compiler to 1.70 or higher. 
 
 As librashader no longer has buildtime linkage requirements, the binary packages are standalone and do not pull in any dependencies. Source packages require `cargo`, `gcc` and `patchelf` (to update the SONAME), but no other external libraries or build tooling. 
 
