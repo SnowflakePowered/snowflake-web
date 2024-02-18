@@ -17,7 +17,7 @@ path: /blog/announcing-librashader-0.2.0
 
 </p>
 
-It's been a almost exactly a year since librashader was released and while I've had lots of positive feedback, this release hopes to address the concerns I've received regarding its developer experience, both for Rust, and C API usage. This release of librashader finally brings complete reference parity with RetroArch
+It's been almost exactly a year since librashader was released and while I've had lots of positive feedback, this release hopes to address the concerns I've received regarding its developer experience, both for Rust, and C API usage. This release of librashader finally brings complete reference parity with RetroArch
 slang shaders with two brand new runtimes, support for [preset path wildcards](https://github.com/libretro/RetroArch/pull/15023), and support for new shader semantics added to RetroArch since last year.
 
 ## Full macOS and Metal support
