@@ -87,6 +87,11 @@ a {
   color: $secondary;
 }
 
+code {
+  color: $gray-700;
+  background: $gray-300;
+}
+
 .badge-primary {
   background: $lilac;
 }
